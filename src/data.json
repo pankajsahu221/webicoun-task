@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "df8d4e64-cd92-4d6a-aad9-3c0b04a82a7b",
+		"name": "share",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Blogs Copy",
+			"item": [
+				{
+					"name": "Blog categories/homepage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://webicoun-backend-hajkn.run-ap-south1.goorm.io/blogcat",
+							"protocol": "https",
+							"host": [
+								"webicoun-backend-hajkn",
+								"run-ap-south1",
+								"goorm",
+								"io"
+							],
+							"path": [
+								"blogcat"
+							]
+						},
+						"description": "Returns two arrays,\nFirst one is 'blogs', which contains preview and object id of latest blogs.\nSecond one is 'blogcat', which returns all the available categories for blogs, alongwith the link to display image for that particular category.\nThe preview will contain author name, title image,title, object id of that blog and meta field(which will contain overview of the contents of that blog)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://webicoun-backend-hajkn.run-ap-south1.goorm.io/blogs/6082ae9b88b521f609ec65b3",
+							"protocol": "https",
+							"host": [
+								"webicoun-backend-hajkn",
+								"run-ap-south1",
+								"goorm",
+								"io"
+							],
+							"path": [
+								"blogs",
+								"6082ae9b88b521f609ec65b3"
+							]
+						},
+						"description": "This is a get API to acess complete blog(not just preview) with its object id.\nThe parameter to be passed with get request should be the object id of the blog.\nThe return value has author name, title image for that blog, description (description contains html, which needs to be rendered in the body of that blog), title of the blog, date and time of creation, and list of categories and tags of that particular blog"
+					},
+					"response": []
+				},
+				{
+					"name": "Blogs by category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\":\"Mental Wellness\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://webicoun-backend-hajkn.run-ap-south1.goorm.io/blog-category",
+							"protocol": "https",
+							"host": [
+								"webicoun-backend-hajkn",
+								"run-ap-south1",
+								"goorm",
+								"io"
+							],
+							"path": [
+								"blog-category"
+							]
+						},
+						"description": "Make a post request to access a preview of all blogs belonging to a particular category.\nThe category ,whose blogs are required, needs to be sent in body of the request.\nThe request will return the banner of that particular category, and an array of preview of blogs belonging to that category.\nThe preview will contain author name, title image,title, object id of that blog and meta field(which will contain overview of the contents of that blog).\n\nThe body of request should be json of form:\n{\n    \"category\":\"Mental Wellness\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Blogs by tags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tag\":\"Mental Wellness\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://webicoun-backend-hajkn.run-ap-south1.goorm.io/blog-tag",
+							"protocol": "https",
+							"host": [
+								"webicoun-backend-hajkn",
+								"run-ap-south1",
+								"goorm",
+								"io"
+							],
+							"path": [
+								"blog-tag"
+							]
+						},
+						"description": "Make a post request to access a preview of all blogs having a particular category.\nThe tag,whose blogs are required, needs to be sent in body of the request.\nThe request will return an array of preview of blogs having that tag.\nThe preview will contain author name, title image,title, object id of that blog and meta field(which will contain overview of the contents of that blog).\n\nThe body of request should be json of form:\n{\n    \"tag\":\"Mental Wellness\"\n}"
+					},
+					"response": []
+				}
+			],
+			"description": "Each blog has a unique object id, which is used to access it.\nAll APIs send preview of the blog, and not complete blog.\nTo access that complete blog, the 'Get blog' API needs to be called with object id of the required blog as get parameter in url.\nThe preview will contain author name, title image,title, object id of that blog and meta field(which will contain overview of the contents of that blog).\nThe entire blog data has author name, title image for that blog, description (description contains html, which needs to be rendered in the body of that blog), title of the blog, date and time of creation, and list of categories and tags of that particular blog",
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Webinar Copy",
+			"item": [
+				{
+					"name": "get webinars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://webicoun-backend-hajkn.run-ap-south1.goorm.io/webinars",
+							"protocol": "https",
+							"host": [
+								"webicoun-backend-hajkn",
+								"run-ap-south1",
+								"goorm",
+								"io"
+							],
+							"path": [
+								"webinars"
+							]
+						},
+						"description": "Returns an array of older webinars, with their title, description and webiurl(which contains the link of the video).\nIgnore category field (and others, as per the instructions given)"
+					},
+					"response": []
+				},
+				{
+					"name": "upcoming webinars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://webicoun-backend-hajkn.run-ap-south1.goorm.io/upcomingwebinars",
+							"protocol": "https",
+							"host": [
+								"webicoun-backend-hajkn",
+								"run-ap-south1",
+								"goorm",
+								"io"
+							],
+							"path": [
+								"upcomingwebinars"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

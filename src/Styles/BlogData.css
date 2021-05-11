@@ -1,0 +1,54 @@
+.blogdata__cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+.blogdata {
+  /* width: 800px; */
+  padding: 30px 15px;
+}
+.blogdata__title {
+  margin-bottom: 10px;
+}
+.blogdata__author {
+  margin: 10px 0;
+}
+.blogdata img {
+  object-fit: contain;
+  height: auto;
+  max-height: 260px;
+  width: 100%;
+  max-width: 500px;
+}
+.blogdata__desc {
+  max-width: 500px;
+}
+.blogdata__desc img {
+  margin: 14px 0;
+}
+.blogdata h1,
+.blogdata h2,
+.blogdata h2,
+.blogdata h4,
+.blogdata h5,
+.blogdata h6 {
+  margin: 10px 0;
+}
+.blogdata__tags__cont {
+  margin-top: 3rem;
+  border-top: 2px solid grey;
+}
+.blogdata__tags {
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+  max-width: 500px;
+}
+.blogdata__tags .tag {
+  padding: 7px 12px;
+  margin: 6px 6px 6px 0;
+  border-radius: 20px;
+  color: white;
+  background: purple;
+}
