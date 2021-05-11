@@ -1,3 +1,8 @@
+# This is the task of Webicoun. #
+
+* `Components` consists of all the components
+* `Styles` consists of all the stylesheets
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
